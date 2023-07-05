@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-# from data_reading_and_writing import create_json_response
+
 import re
 
 from flasgger import Swagger, LazyString, LazyJSONEncoder
@@ -36,13 +36,18 @@ swagger = Swagger(app,
 
 @swag_from("docs/hello_world.yml", methods=['GET'])
 @app.route('/', methods=['GET'])
-def hello():
-    # json_response = create_json_response(description="Original Teks",data="Halo, apa kabar semua?")
+def hello_world():
+    json_response = {
+        'status_code': 200,
+        'description': "Hello World",
+        'data': 'Hello World'
+    }
+
     response_data = jsonify({"response": "SUCCESS"})
     return response_data
 
 
-@swag_from("docs/", methods=['POST'])
+@swag_from("docs/input_processing", methods=['POST'])
 @app.route('/input-processing', methods=['POST'])
 def input_processing():
 
