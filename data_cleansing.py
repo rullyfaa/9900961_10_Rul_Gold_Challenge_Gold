@@ -1,12 +1,14 @@
 import re
 import pandas as pd
 
-df = pd.read_csv("Desktop/chapter 3 binar/drive/data.csv", encoding="latin-1")
+df = pd.read_csv(
+    "/Users/pro2015/Desktop/chapter 3 binar/data/challenge gold/app.py/data.csv", encoding="latin-1")
 new_kamusalay = pd.read_csv(
-    "Desktop/chapter 3 binar/drive/new_kamusalay.csv", encoding="latin-1")
+    "/Users/pro2015/Desktop/chapter 3 binar/data/challenge gold/app.py/new_kamusalay.csv", encoding="latin-1")
 abusive = pd.read_csv(
-    "Desktop/chapter 3 binar/drive/abusive.csv", encoding="latin-1")
+    "/Users/pro2015/Desktop/chapter 3 binar/data/challenge gold/app.py/abusive.csv", encoding="latin-1")
 
+list_of_abusive_word = abusive['ABUSIVE'].tolist()
 new_kamus_alay = {}
 for k, v in new_kamusalay.values:
     new_kamus_alay[k] = v

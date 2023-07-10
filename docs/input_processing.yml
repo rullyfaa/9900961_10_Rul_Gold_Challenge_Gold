@@ -1,7 +1,7 @@
 tags:
-  - name: file Processing
+  - name: input text Processing
 get:
-  description: file yang akan diproses
+  description: input text yang akan diproses
 parameters:
   - name: text
     in: formData
